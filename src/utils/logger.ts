@@ -5,13 +5,13 @@ export const log = {
     console.log(chalk.green(`✔ ${msg}`));
   },
   error(msg: string): void {
-    console.error(chalk.red(`✖ ${msg}`));
+    console.log(chalk.red(`✖ ${msg}`));
   },
   info(msg: string): void {
     console.log(chalk.cyan(`ℹ ${msg}`));
   },
   warn(msg: string): void {
-    console.warn(chalk.yellow(`⚠ ${msg}`));
+    console.log(chalk.yellow(`⚠ ${msg}`));
   },
   dim(msg: string): void {
     console.log(chalk.dim(msg));
