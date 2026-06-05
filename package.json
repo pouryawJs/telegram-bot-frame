@@ -1,0 +1,35 @@
+{
+  "name": "telegram-bot-frame",
+  "version": "1.0.0",
+  "description": "CLI scaffolding tool for Telegram bots",
+  "type": "module",
+  "bin": {
+    "tbf": "./dist/index.js",
+    "telegram-bot-frame": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "tsc --noEmit",
+    "test": "node --test",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.10.1",
+    "chalk": "^5.4.1",
+    "fs-extra": "^11.3.0",
+    "ora": "^8.2.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.13.1",
+    "tsup": "^8.3.6",
+    "typescript": "^5.7.3"
+  }
+}
