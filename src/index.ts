@@ -1,5 +1,5 @@
 import { initCommand } from "./commands/init";
-import { logger } from "./utils/logger";
+import { log } from "./utils/logger";
 
 const helpMessage = `telegram-bot-frame
 
@@ -16,7 +16,7 @@ async function main(argv: string[]): Promise<void> {
   const [command] = argv;
 
   if (!command || command === "--help" || command === "-h") {
-    logger.info(helpMessage);
+    log.info(helpMessage);
     return;
   }
 
@@ -25,12 +25,12 @@ async function main(argv: string[]): Promise<void> {
     return;
   }
 
-  logger.warn(`Unknown command: ${command}`);
-  logger.info(helpMessage);
+  log.warn(`Unknown command: ${command}`);
+  log.info(helpMessage);
 }
 
 main(process.argv.slice(2)).catch((error: unknown) => {
   const message = error instanceof Error ? error.message : "An unexpected error occurred.";
-  logger.error(message);
+  log.error(message);
   process.exitCode = 1;
 });

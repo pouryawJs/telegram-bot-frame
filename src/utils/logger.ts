@@ -1,13 +1,19 @@
 import chalk from "chalk";
 
-export const logger = {
-  info(message: string): void {
-    console.log(message);
+export const log = {
+  success(msg: string): void {
+    console.log(chalk.green(`✔ ${msg}`));
   },
-  warn(message: string): void {
-    console.warn(chalk.yellow(message));
+  error(msg: string): void {
+    console.error(chalk.red(`✖ ${msg}`));
   },
-  error(message: string): void {
-    console.error(chalk.red(message));
+  info(msg: string): void {
+    console.log(chalk.cyan(`ℹ ${msg}`));
+  },
+  warn(msg: string): void {
+    console.warn(chalk.yellow(`⚠ ${msg}`));
+  },
+  dim(msg: string): void {
+    console.log(chalk.dim(msg));
   }
 };
